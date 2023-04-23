@@ -1,0 +1,83 @@
+.popup {
+    height: 650px;
+    position: fixed;
+    top: 2%;
+    left: 35%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    overflow-y: scroll;
+  }
+  /* .scale{
+    transform: translate(-50%, -50%) scale(1);
+  } */
+  
+  .popup h2 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .popup input[type="text"],
+  .popup textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  
+  .popup input[type="file"] {
+    margin-top: 5px;
+  }
+  
+  .popup textarea {
+    height: 100px;
+  }
+  
+  .popup-buttons input[type="submit"]{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  .green{
+    color: green;
+  }
+  .hidden {
+    display: none;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .popup-buttons button{
+    margin: 0 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }

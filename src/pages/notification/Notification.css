@@ -1,0 +1,39 @@
+.messagecon{
+    margin-top: 20px;
+}
+.message{
+   width: 50%;
+   border-radius: 0 10px 10px 10px;
+   background-color: rgb(225 225 249);
+   -webkit-box-shadow: 5px 4px 5px 0px rgba(209,207,209,1);
+   -moz-box-shadow: 5px 4px 5px 0px rgba(209,207,209,1);
+   box-shadow: 5px 4px 5px 0px rgba(209,207,209,1);
+   margin: 15px 0;
+}
+.id{
+    padding: 10px;
+}
+.content{
+    padding: 5px 7px;
+}
+.delete{
+    width: 97%;
+    display: flex;
+    justify-content: right;
+}
+.delete button{
+    color: red;
+    border:1px solid red;
+    padding: 7px 10px;
+    margin: 7px 0;
+    cursor: pointer;
+}
+.delete button:hover{
+    background-color: red;
+    color: white;
+    border: none;
+}
+.noti{
+    color: gray;
+    font-size: 20px;
+}

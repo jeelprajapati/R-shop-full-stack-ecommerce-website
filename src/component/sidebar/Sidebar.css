@@ -1,0 +1,39 @@
+.link{
+    text-decoration: none;
+}
+.sidebar{
+    height: 95vh;
+}
+.midle ul li{
+    list-style: none;
+    margin:18px 15px;
+    display: flex;
+    align-items: center; 
+    color:purple;
+    
+}
+.midle ul li:hover{
+    background-color: blue;
+    color: white;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(168,161,168,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(168,161,168,1);
+    box-shadow: 5px 5px 5px 0px rgba(168,161,168,1);
+}
+
+.title{
+    color: grey;
+    margin:5px;
+}
+.top{
+    display: flex;
+    justify-content: center;
+}
+.top span{
+    font-size: 20px;
+    color: blue;
+    font-weight: bold;
+    margin:15px 7px;
+}
+.icon{
+    font-size: 15px;
+}

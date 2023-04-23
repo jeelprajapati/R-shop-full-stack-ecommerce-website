@@ -1,78 +1,64 @@
-import React, { useEffect, useState } from 'react'
-import "./Navbar.css"
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import SearchIcon from '@mui/icons-material/Search';
-import Styled from 'styled-components';
-import Cart from '../cart/Cart.jsx'
-import { useSelector } from 'react-redux';
+import React,{useState,useEffect} from 'react'
+import './Navbar.css'
+import image from '../../profile.jpg'
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import LanguageIcon from '@mui/icons-material/Language';
+import { useDispatch} from 'react-redux'
+import { addUsers } from '../../redux/slice/Userslice.jsx'
+import  axios from 'axios';
+import { addproduct } from '../../redux/slice/Productslice';
+import { addorder } from '../../redux/slice/Orderslice'
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-const Container=Styled.div`
-   position:relative;
-`
 const Navbar = () => {
-  const[scroll,setScroll]=useState(false);
-  const[slide,setSlide]=useState(false);
-  const[items,setItems]=useState(['']);
-  const[click,setClick]=useState(false);
-  const[filteredItems,setFilteredItems]=useState(null);
-  const [searchInput, setSearchInput] = useState('');
-
-  //detect scroll
-  let prevScrollpos = window.pageYOffset;
-  window.addEventListener('scroll', function() {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    setScroll(false);
-  } else {
-    setScroll(true);
+  const [users,setUsers]=useState([]);
+  const [products,setProducts]=useState([]);
+  const [orders,setOrders]=useState([]);
+  const dispatch=useDispatch()
+  
+  const additem=()=>{
+     dispatch(addUsers(users));
+     dispatch(addproduct(products));
+     dispatch(addorder(orders))
   }
-  prevScrollpos = currentScrollPos;
-});
+  const getuser=async()=>{
+    const res= await axios.get('http://localhost:8000/auth/alluser');
+    setUsers(res.data);
+  }
+  const getproduct=async()=>{
+    const res= await axios.get('http://localhost:8000/product/');
+    setProducts(res.data);
+  }
 
-//get subcat
-const gettrendproduct=async()=>{
-  const res=await axios.get('http://localhost:8000/product/subcat');
-  setItems(res.data);
-}
-useEffect(()=>{
- gettrendproduct();
-},[])
-//setfilteritem for search
- const onchange=()=>{
-  setFilteredItems(items.filter(item => String(item).toLowerCase().includes(searchInput.toLowerCase())));
- }
-//set totle product number
-const selecthook=useSelector(state=>state.cart);
+  const getorder=async()=>{
+    const res= await axios.get('http://localhost:8000/order/',
+    {
+        headers:{'token':localStorage.getItem('token')}
+    });
+    setOrders(res.data);
+  }
+  
+  
+  useEffect(()=>{
+   getuser()
+   getproduct()
+   getorder()
+  },[])
+ useEffect(()=>{
+  additem();
+ },[users,products,orders])
 
   return (
-    <Container Scroll={scroll} className='container'>
-        <div className="logo">
-           <i> R-MART</i>
-        </div>   
-        <div className="search">
-            <div><SearchIcon/></div>
-            <input type="text" placeholder='search'onChange={(e)=>{setClick(true);setSearchInput(e.target.value);onchange()}}/>
-        </div> 
-        <div className="searchfilter">
-          {click&&filteredItems&&(filteredItems.map((e)=>(<Link to={`/products/?subcat=${e}`} className='link' onClick={()=>{setClick(false)}}><div className="item">{e}</div></Link>)))}
-        </div>
-        <div className="right">
-            <ul>
-              <Link to='/login' className='link'><li>Login</li></Link>
-              <Link to='/register' className='link'><li>Register</li></Link>
-              <li><FavoriteBorderIcon/></li>
-              <li>
-               <span>{selecthook.products.length}</span>
-              <div style={{cursor:'pointer'}} onClick={()=>{slide?setSlide(false):setSlide(true)}}><ShoppingCartCheckoutIcon/></div>
-              </li>
-            </ul>
-        </div>  
-        {slide&&<div className="cartcontainer">
-          <Cart/>
-        </div>}
-    </Container>
+    <div className='navcontainer'>
+      <div className="navleft">
+      </div>
+      <div className="navright">
+        <div className="langage"><LanguageIcon/>English</div>
+        <div className="notification"><Link to='/notification' className='link'><NotificationsOutlinedIcon/></Link></div>
+        <div className="profile"><img src={image} alt="" /></div>
+        <div className="setting"><SettingsOutlinedIcon/></div>
+      </div>
+    </div>
   )
 }
 

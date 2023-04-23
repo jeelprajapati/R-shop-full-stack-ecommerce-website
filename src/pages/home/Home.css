@@ -1,0 +1,10 @@
+.list{
+    display: flex;
+    gap: 10px;
+}
+.chart{
+    margin-top: 30px;
+}
+.link{
+    text-decoration: none;
+}

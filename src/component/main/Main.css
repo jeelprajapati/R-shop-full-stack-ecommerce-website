@@ -1,0 +1,47 @@
+.maincontainer{
+    /* border: 1px solid; */
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 40px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(168,161,168,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(168,161,168,1);
+    box-shadow: 5px 5px 5px 0px rgba(168,161,168,1);
+}
+.maintop{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.usert{
+    font-size: 20px;
+    color: gray;
+    
+}
+.mainmidle{
+    padding: 10px;
+    font-size: 20px;
+    color: gray;
+}
+.mainbottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.growth{
+    display: flex;
+    align-items: center;
+}
+.positive{
+    color: green;
+}
+.pericon{
+    font-size: 20px;
+    /* background-color: red; */
+    color: white;
+    border-radius: 5px;
+}
+.see{
+    font-size: 18px;
+    border-bottom: 1px solid;
+    color: gray;
+}

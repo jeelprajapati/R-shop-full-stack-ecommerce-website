@@ -1,0 +1,29 @@
+.td{
+  font-size: 18px;
+  padding: 5px 35px;
+  border: 1px solid gray;
+  color: gray;
+}
+.th{
+   font-size: 20px;
+   border: 1px solid gray;   
+}
+.table{
+    border: 1px solid gray;   
+}
+.ordercon{
+    margin: 20px 10px;
+}
+.button{
+    margin:4px;
+    padding:8px;
+    background-color:blue;
+    color:white;
+    border:none
+}
+.red{
+    color: red;
+}
+.blue{
+    color: rgb(2, 147, 2);
+}
