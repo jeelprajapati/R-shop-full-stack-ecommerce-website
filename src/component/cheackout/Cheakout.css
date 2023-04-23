@@ -1,0 +1,44 @@
+.cheackout{
+    display: flex;
+    justify-content: center;
+}
+.cheackoutcon{
+   margin: 10px;
+   border: 1px solid gray;
+   padding: 10px;
+   border-radius: 10px;
+   
+}
+.input{
+    width: 400px;
+    height: 28px;
+    margin: 2px 0;
+    border-radius: 8px;
+}
+.lable{
+    display: block;
+    font-size: 17px;
+    margin: 5px;
+}
+.paymentmethod{
+    display: flex;
+    flex-direction: column;
+}
+.paymentmethod:nth-child(1){
+    margin: 3px;
+}
+.paymentmethod:nth-child(2){
+    margin: 3px;
+}
+.button{
+   padding: 7px 10px;
+   margin: 10px 3px;
+   color: white;
+   border: none;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}

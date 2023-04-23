@@ -1,0 +1,66 @@
+.link{
+    text-decoration: none;
+}
+.catecontainer div img{
+    width: 100%;
+    height: 100%;
+}
+.catecontainer div{
+    position: relative;
+}
+.catecontainer div button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 15px;
+    padding: 10px;
+}
+.catecontainer{
+    display:inline-grid;
+    width: 1400px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+    margin:20px 30px;
+    gap: 8px;
+}
+.one{
+    display: inline-block;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 2;
+}
+.two{
+    display: inline-block;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 2;
+}
+.three{
+    display: inline-block;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 3;
+}
+.six{
+    display: inline-block;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 5;
+}
+@media only screen and (max-width: 700px) {
+    .catecontainer{
+        width: 350px;
+        margin: 0;
+        margin-top: 20px;
+    }
+    .catecontainer div button{
+       padding: 2px 5px;
+       font-size: 9px;
+       top: 36%;
+       left: 28%;
+    }
+}
